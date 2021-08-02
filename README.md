@@ -12,3 +12,7 @@ Through Command line:
 
     1. Go to project path
     2. Run " mvn clean test "
+
+Future Scope: 
+1. Parralel execution of Scenarios : https://cucumber.io/docs/guides/parallel-execution/
+2. Cross browser execution
