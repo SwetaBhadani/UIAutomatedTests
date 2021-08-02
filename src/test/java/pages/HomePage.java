@@ -89,22 +89,10 @@ public class HomePage {
 
     public void clickOnButton(String buttonName) {
 
-//        WebDriverWait explicitWait = new WebDriverWait(driver, 30);
 
-        WebElement buttonWebElement = null;
-
-        if (buttonName.equalsIgnoreCase("Move in for months")) {
-            buttonWebElement = moveInForMonthsButton;
-        }
-        if (buttonName.equalsIgnoreCase("Request Information")) {
-            buttonWebElement = requestInfoForStayForMonths;
-        }
-        if (buttonName.equalsIgnoreCase("Select")) {
-            buttonWebElement = dateSelectButton;
-        }
-//        explicitWait.until(ExpectedConditions.elementToBeClickable(buttonWebElement));
-
-        buttonWebElement.click();
+//        "//button[contains(text(), '" + buttonName + "')]"
+        WebElement buttonElement = driver.findElement(By.xpath("//button[contains(text(), '" + buttonName + "')]"));
+        buttonElement.click();
     }
 
 

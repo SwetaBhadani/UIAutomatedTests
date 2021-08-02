@@ -51,8 +51,9 @@ public class StepDefinition extends BaseUtil {
 
 
     @When("I click on {string} button")
-    public void i_click_on_button(String buttonName) {
+    public void i_click_on_button(String buttonName) throws InterruptedException {
         hp.clickOnButton(buttonName);
+        // Thread.sleep(1000);
     }
 
     @When("I provide the below details")
@@ -70,7 +71,8 @@ public class StepDefinition extends BaseUtil {
     @Then("I verify if I see below options")
     public void i_verify_if_i_see_below_options(List<String> dataTable) throws InterruptedException {
 
-
+        //Putting sleep because of lag after clicking request Information
+        Thread.sleep(2000);
         List<String> bookingInfoLinkTexts = hp.getBookingInfoLinkTexts();
 
         Assert.assertEquals(dataTable.get(0), bookingInfoLinkTexts.get(0));
